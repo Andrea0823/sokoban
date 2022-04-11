@@ -14,7 +14,7 @@ class Sokoban:
   mapa = [
 	[3,3,3,3,3,3,3,3,3,3,3,3],
 	[3,1,1,1,1,1,1,1,1,1,1,3],
-	[3,1,1,1,0,1,1,1,1,1,1,3],
+	[3,1,1,1,0,4,1,1,1,1,1,3],
 	[3,1,1,1,1,1,1,1,1,1,1,3],
   [3,1,1,1,1,1,1,1,1,1,1,3], 
   [3,1,1,1,1,1,1,1,1,1,1,3],  
@@ -109,7 +109,30 @@ class Sokoban:
       self.mapa[self.muneco_fila,self.muneco_columna+1]=5
       self.mapa[self.muneco_fila,self.muneco_columna+2]=6
       self.muneco_columna+=1
-    
+
+#Mover Izquierda      
+  def moverIzquierda(self):
+    if self.mapa[self.muneco_fila,self.muneco_columna]== 0 and  self.mapa[self.muneco_fila,self.muneco_columna-1]==1:
+      self.mapa[self.muneco_fila,self.muneco_columna-1]=0
+      self.mapa[self.muneco_fila,self.muneco_columna]=1
+      self.muneco_columna-=1
+    #18.- Personaje, meta
+    elif self.mapa[self.muneco_fila,self.muneco_columna]== 0 and  self.mapa[self.muneco_fila,self.muneco_columna-1]==4:
+      self.mapa[self.muneco_fila,self.muneco_columna-1]=5
+      self.mapa[self.muneco_fila,self.muneco_columna]=1
+      self.muneco_columna-=1
+    #19.-Personaje, caja, espacio
+    elif self.mapa[self.muneco_fila,self.muneco_columna]== 0 and  self.mapa[self.muneco_fila,self.muneco_columna-1]==2 and self.mapa[self.muneco_fila,self.muneco_columna-2]==1 :
+      self.mapa[self.muneco_fila,self.muneco_columna-1]=0
+      self.mapa[self.muneco_fila,self.muneco_columna]=1
+      self.mapa[self.muneco_fila,self.muneco_columna-2]=2
+      self.muneco_columna-=1
+     #20.-Personaje, caja, meta
+    elif self.mapa[self.muneco_fila,self.muneco_columna]== 0 and  self.mapa[self.muneco_fila,self.muneco_columna-1]==2 and self.mapa[self.muneco_fila,self.muneco_columna-2]==4 :
+      self.mapa[self.muneco_fila,self.muneco_columna-1]=0
+      self.mapa[self.muneco_fila,self.muneco_columna]=1
+      self.mapa[self.muneco_fila,self.muneco_columna-2]=6
+      self.muneco_columna-=1    
             
                   
 juego = Sokoban()#Crea un objeto para jugar
