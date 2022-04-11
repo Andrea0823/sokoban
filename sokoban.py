@@ -13,11 +13,13 @@ class Sokoban:
   #mapa = [3,1,1,1,0,1,1,1,3]#Define el mapa de juego
 
   mapa = [
-	[3,3,3,3,3,3,3,3,3],
-	[3,1,1,1,1,1,1,1,3],
-	[3,1,1,1,0,1,1,1,3],
-	[3,1,1,1,1,1,1,1,3],
-	[3,3,3,3,3,3,3,3,3]
+	[3,3,3,3,3,3,3,3,3,3,3,3,3,3],
+	[3,1,1,1,1,1,1,1,1,1,1,1,1,3],],
+	[3,1,1,1,1🐶,🎀🎀,1,1,1,1,1,1,3],
+	[3,1,1,1,1,1,1,1,1,👑👑,1,1,3],
+    [3,1,1,1,1,1,1,1,1,👑👑,1,1,3],
+    [3,1,1,1,1,1,1,1,1,👑👑,1,1,3],
+	[3,3,3,3,3,3,3,3,3,3,3,3,3,3]
       ]#Define el mapa de juego
   mapa = np.array(mapa)
   result = np.where(mapa == 0)
@@ -26,8 +28,8 @@ class Sokoban:
   def __init__(self):
     pass
   def imprimirMapa(self): #Metodo para imprimir el mapa
-      for j in range(5):#Recorre cada caracterer del juego
-        for i in range(9):
+      for j in range(7):#Recorre cada caracterer del juego
+        for i in range(14):
           if self.mapa[j][i] == 1:#Si encuentra un numero 1 -  espacio
             #for a in range(len(self.mapa[0])):
             print("_", end = "")#Cambiar un 1 por un ""
@@ -46,7 +48,19 @@ class Sokoban:
         self.mapa[self.muneco_fila,self.muneco_columna]=1
         self.mapa[self.muneco_fila,self.muneco_columna+1]=0
         self.muneco_columna+=1
+#6.-Personaje, meta    
+    elif self.mapa[self.muneco_fila,self.muneco_columna]== 0 and  self.mapa[self.muneco_fila,self.muneco_columna+1]==4:
+        self.mapa[self.muneco_fila,self.muneco_columna]=1
+        self.mapa[self.muneco_fila,self.muneco_columna+1]=5
+        self.muneco_columna+=1 
+#7.-Personaje, caja, espacio
+    elif self.mapa[self.muneco_fila,self.muneco_columna]== 0 and  self.mapa[self.muneco_fila,self.muneco_columna+1]==2 and self.mapa[self.muneco_fila,self.muneco_columna+2]==1 :
+        self.mapa[self.muneco_fila,self.muneco_columna]=1
+        self.mapa[self.muneco_fila,self.muneco_columna+1]=0
+        self.mapa[self.muneco_fila,self.muneco_columna+2]=2
+        self.muneco_columna+=1
 
+        
 juego = Sokoban()#Crea un objeto para jugar
 juego.imprimirMapa()#Imprime el mapa
 
