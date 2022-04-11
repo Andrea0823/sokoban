@@ -1,5 +1,4 @@
 print("hola")
-#Prueba
 import numpy as np
 class Sokoban:
 #Reprsentacion de comandos del juego------------
@@ -13,13 +12,13 @@ class Sokoban:
   #mapa = [3,1,1,1,0,1,1,1,3]#Define el mapa de juego
 
   mapa = [
-	[3,3,3,3,3,3,3,3,3,3,3,3,3,3],
-	[3,1,1,1,1,1,1,1,1,1,1,1,1,3],],
-	[3,1,1,1,1🐶,🎀🎀,1,1,1,1,1,1,3],
-	[3,1,1,1,1,1,1,1,1,👑👑,1,1,3],
-    [3,1,1,1,1,1,1,1,1,👑👑,1,1,3],
-    [3,1,1,1,1,1,1,1,1,👑👑,1,1,3],
-	[3,3,3,3,3,3,3,3,3,3,3,3,3,3]
+	[3,3,3,3,3,3,3,3,3,3,3,3],
+	[3,1,1,1,1,1,1,1,1,1,1,3],
+	[3,1,1,1,0,1,1,1,1,1,1,3],
+	[3,1,1,1,1,1,1,1,1,1,1,3],
+    [3,1,1,1,1,1,1,1,1,1,1,3], 
+    [3,1,1,1,1,1,1,1,1,1,1,3],  
+	[3,3,3,3,3,3,3,3,3,3,3,3]
       ]#Define el mapa de juego
   mapa = np.array(mapa)
   result = np.where(mapa == 0)
@@ -29,7 +28,7 @@ class Sokoban:
     pass
   def imprimirMapa(self): #Metodo para imprimir el mapa
       for j in range(7):#Recorre cada caracterer del juego
-        for i in range(14):
+        for i in range(12):
           if self.mapa[j][i] == 1:#Si encuentra un numero 1 -  espacio
             #for a in range(len(self.mapa[0])):
             print("_", end = "")#Cambiar un 1 por un ""
@@ -42,25 +41,9 @@ class Sokoban:
         print()
       print() #Imprime una linea vacia
       #mover
-  def moverDerecha(self):
-    #5.- Personaje, espacio 
-    if self.mapa[self.muneco_fila,self.muneco_columna]== 0 and  self.mapa[self.muneco_fila,self.muneco_columna+1]==1:
-        self.mapa[self.muneco_fila,self.muneco_columna]=1
-        self.mapa[self.muneco_fila,self.muneco_columna+1]=0
-        self.muneco_columna+=1
-#6.-Personaje, meta    
-    elif self.mapa[self.muneco_fila,self.muneco_columna]== 0 and  self.mapa[self.muneco_fila,self.muneco_columna+1]==4:
-        self.mapa[self.muneco_fila,self.muneco_columna]=1
-        self.mapa[self.muneco_fila,self.muneco_columna+1]=5
-        self.muneco_columna+=1 
-#7.-Personaje, caja, espacio
-    elif self.mapa[self.muneco_fila,self.muneco_columna]== 0 and  self.mapa[self.muneco_fila,self.muneco_columna+1]==2 and self.mapa[self.muneco_fila,self.muneco_columna+2]==1 :
-        self.mapa[self.muneco_fila,self.muneco_columna]=1
-        self.mapa[self.muneco_fila,self.muneco_columna+1]=0
-        self.mapa[self.muneco_fila,self.muneco_columna+2]=2
-        self.muneco_columna+=1
-
+    
         
+                  
 juego = Sokoban()#Crea un objeto para jugar
 juego.imprimirMapa()#Imprime el mapa
 
@@ -82,4 +65,4 @@ while True:#Bucle para jugar N veces
     juego.imprimirMapa()#imprime el mapa
   elif movimientos == "q":#si es q-salir
     print("Saliste del juego")#Imprmir mensaje
-    break #Rompe el ciclo while
+    break #Rompe el ciclo whilee
