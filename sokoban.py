@@ -1,5 +1,5 @@
 print("hola")
-
+#Prueba
 import numpy as np
 class Sokoban:
 #Reprsentacion de comandos del juego------------
