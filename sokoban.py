@@ -16,7 +16,7 @@ class Sokoban:
 	[3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3],
 	[3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3],
 	[3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3],
-  [3,1,1,1,1,1,1,1,1,1,1,1,4,1,1,1,1,3], 
+  [3,1,1,1,1,1,1,1,1,1,1,1,6,1,1,1,1,3], 
   [3,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,3],
   [3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3],
   [3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3],
@@ -208,8 +208,52 @@ class Sokoban:
       self.mapa[self.muneco_fila-1,self.muneco_columna]=0
       self.mapa[self.muneco_fila-2,self.muneco_columna]=6
       self.muneco_fila-=1
-         
-              
+        #33.- Espacio / Caja_meta / Personaje
+    elif self.mapa[self.muneco_fila,self.muneco_columna]== 0 and  self.mapa[self.muneco_fila-1,self.muneco_columna]==6 and  self.mapa[self.muneco_fila-2,self.muneco_columna]==1:
+      self.mapa[self.muneco_fila,self.muneco_columna]=1
+      self.mapa[self.muneco_fila-1,self.muneco_columna]=5
+      self.mapa[self.muneco_fila-2,self.muneco_columna]=2
+      self.muneco_fila-=1
+    #34.- Meta / Caja_meta / Personaje
+    elif self.mapa[self.muneco_fila,self.muneco_columna]== 0 and  self.mapa[self.muneco_fila-1,self.muneco_columna]==6 and  self.mapa[self.muneco_fila-2,self.muneco_columna]==4:
+      self.mapa[self.muneco_fila,self.muneco_columna]=1
+      self.mapa[self.muneco_fila-1,self.muneco_columna]=5
+      self.mapa[self.muneco_fila-2,self.muneco_columna]=6
+      self.muneco_fila-=1
+    #35.- Espacio / Personaje_meta
+    elif self.mapa[self.muneco_fila,self.muneco_columna]== 5 and  self.mapa[self.muneco_fila-1,self.muneco_columna]==1:
+      self.mapa[self.muneco_fila,self.muneco_columna]=4
+      self.mapa[self.muneco_fila-1,self.muneco_columna]=0
+      self.muneco_fila-=1
+   #36.- Meta / Personaje_meta
+    elif self.mapa[self.muneco_fila,self.muneco_columna]== 5 and  self.mapa[self.muneco_fila-1,self.muneco_columna]==4:
+      self.mapa[self.muneco_fila,self.muneco_columna]=4
+      self.mapa[self.muneco_fila-1,self.muneco_columna]=5
+      self.muneco_fila-=1
+    #37.- Espacio / Caja / Personaje_meta
+    elif self.mapa[self.muneco_fila,self.muneco_columna]== 5 and  self.mapa[self.muneco_fila-1,self.muneco_columna]==2 and  self.mapa[self.muneco_fila-2,self.muneco_columna]==1:
+      self.mapa[self.muneco_fila,self.muneco_columna]=4
+      self.mapa[self.muneco_fila-1,self.muneco_columna]=0
+      self.mapa[self.muneco_fila-2,self.muneco_columna]=2
+      self.muneco_fila-=1
+    #38.- Meta / Caja / Personaje_meta
+    elif self.mapa[self.muneco_fila,self.muneco_columna]== 5 and  self.mapa[self.muneco_fila-1,self.muneco_columna]==2 and  self.mapa[self.muneco_fila-2,self.muneco_columna]==4:
+      self.mapa[self.muneco_fila,self.muneco_columna]=4
+      self.mapa[self.muneco_fila-1,self.muneco_columna]=0
+      self.mapa[self.muneco_fila-2,self.muneco_columna]=6
+      self.muneco_fila-=1     
+    #39.- Espacio / Caja_meta / Personaje_meta
+    elif self.mapa[self.muneco_fila,self.muneco_columna]== 5 and  self.mapa[self.muneco_fila-1,self.muneco_columna]==6 and  self.mapa[self.muneco_fila-2,self.muneco_columna]==1:
+      self.mapa[self.muneco_fila,self.muneco_columna]=4
+      self.mapa[self.muneco_fila-1,self.muneco_columna]=5
+      self.mapa[self.muneco_fila-2,self.muneco_columna]=2
+      self.muneco_fila-=1         
+    #40.- Meta / Caja_meta / Personaje_meta
+    elif self.mapa[self.muneco_fila,self.muneco_columna]== 5 and  self.mapa[self.muneco_fila-1,self.muneco_columna]==6 and  self.mapa[self.muneco_fila-2,self.muneco_columna]==4:
+      self.mapa[self.muneco_fila,self.muneco_columna]=4
+      self.mapa[self.muneco_fila-1,self.muneco_columna]=5
+      self.mapa[self.muneco_fila-2,self.muneco_columna]=6
+      self.muneco_fila-=1   
 juego = Sokoban()#Crea un objeto para jugar
 juego.imprimirMapa()#Imprime el mapa
 
