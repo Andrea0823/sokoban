@@ -41,7 +41,12 @@ class Sokoban:
         print()
       print() #Imprime una linea vacia
       #mover
-    
+def moverDerecha(self):
+    #5.- Personaje, espacio 
+    if self.mapa[self.muneco_fila,self.muneco_columna]== 0 and  self.mapa[self.muneco_fila,self.muneco_columna+1]==1:
+        self.mapa[self.muneco_fila,self.muneco_columna]=1
+        self.mapa[self.muneco_fila,self.muneco_columna+1]=0
+        self.muneco_columna+=1
         
                   
 juego = Sokoban()#Crea un objeto para jugar
