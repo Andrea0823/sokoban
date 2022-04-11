@@ -182,7 +182,10 @@ class Sokoban:
       self.mapa[self.muneco_fila,self.muneco_columna-1]=5
       self.mapa[self.muneco_fila,self.muneco_columna]=4
       self.mapa[self.muneco_fila,self.muneco_columna-2]=6
-      self.muneco_columna-=1  
+      self.muneco_columna-=1
+
+    # Mover Arriba
+  def moverArriba(self):  
                   
 juego = Sokoban()#Crea un objeto para jugar
 juego.imprimirMapa()#Imprime el mapa
