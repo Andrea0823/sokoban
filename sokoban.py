@@ -34,7 +34,7 @@ class Sokoban:
       for i in range(18):
         if self.mapa[j][i] == 1:#Si encuentra un numero 1 -  espacio
             #for a in range(len(self.mapa[0])):
-          print("_", end = "")#Cambiar un 1 por un ""
+          print(" ", end = "")#Cambiar un 1 por un ""
         elif self.mapa[j][i] == 3: #3-pared
             #for a in range(len(self.mapa)):
           print("#", end = "")#Cambia un 3 por un simbolo
