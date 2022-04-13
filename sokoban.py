@@ -1,7 +1,7 @@
 print("hola")
 import numpy as np
 class Sokoban:
-#Reprsentacion de comandos del juego------------
+#Representacion de comandos del juego
   #0 = muñeco 
   #1 = espacio
   #2 = caja
@@ -29,18 +29,18 @@ class Sokoban:
   muneco_columna=result[1]
   def __init__(self):
     pass
-  def imprimirMapa(self): #Metodo para imprimir el mapa
+  def imprimirMapa(self): #Lo ocupamos para imprimir el mapa
     for j in range(10):#Recorre cada caracterer del juego
       for i in range(18):
-        if self.mapa[j][i] == 0:
+        if self.mapa[j][i] == 0:#El personaje(0) lo convertimos en un "🐶"
           print("🐶", end = "")
-        elif self.mapa[j][i] == 1:
+        elif self.mapa[j][i] == 1:#El espacio(1) lo convertimos en un " "
           print("  ", end = "")
-        elif self.mapa[j][i] == 2:
+        elif self.mapa[j][i] == 2:#La caja (2) lo convertimos en un "🎁"
           print("🎁", end = "")
-        elif self.mapa[j][i] == 3:
+        elif self.mapa[j][i] == 3:#La pared (3) lo convertimos en un "🌳"
           print("🌳", end = "")
-        elif self.mapa[j][i] == 4:
+        elif self.mapa[j][i] == 4:#
           print("🌷", end = "")
         elif self.mapa[j][i] == 5:
           print("🤡", end = "")
