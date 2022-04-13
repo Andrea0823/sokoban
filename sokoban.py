@@ -40,6 +40,8 @@ class Sokoban:
           print("🎁", end = "")
         elif self.mapa[j][i] == 3:
           print("🌳", end = "")
+        elif self.mapa[j][i] == 4:
+          print("🌷", end = "")
 
         else:
           print(self.mapa[j][i], end=" ")
