@@ -40,16 +40,17 @@ class Sokoban:
           print("🎁", end = "")
         elif self.mapa[j][i] == 3:#La pared (3) lo convertimos en un "🌳"
           print("🌳", end = "")
-        elif self.mapa[j][i] == 4:#
+        elif self.mapa[j][i] == 4:#La meta (4) lo convertimos en "🌷"
           print("🌷", end = "")
-        elif self.mapa[j][i] == 5:
+        elif self.mapa[j][i] == 5:#El personaje_meta (5) lo convertimos en "🤡"
           print("🤡", end = "")
-        elif self.mapa[j][i] == 6:
+        elif self.mapa[j][i] == 6:#La caja_meta (6) lo convertimos en "🦴"
           print("🦴", end = "")
         else:
           print(self.mapa[j][i], end=" ")
       print()
     print() #Imprime una linea vacia
+    #Aqui comomensamos con los movimientos a la derecha 
   def moverDerecha(self):
     #5.-Personaje, espacio 
     if self.mapa[self.muneco_fila,self.muneco_columna]== 0 and  self.mapa[self.muneco_fila,self.muneco_columna+1]==1:
@@ -119,8 +120,8 @@ class Sokoban:
       self.mapa[self.muneco_fila,self.muneco_columna+1]=5
       self.mapa[self.muneco_fila,self.muneco_columna+2]=6
       self.muneco_columna+=1
-
-#Mover Izquierda      
+#Terminamos los movimientos hacia la derecha funcionales y comprabados.
+    #Aqui iniciamos los movimientos de la Izquierda     
   def moverIzquierda(self):
     if self.mapa[self.muneco_fila,self.muneco_columna]== 0 and  self.mapa[self.muneco_fila,self.muneco_columna-1]==1:
       self.mapa[self.muneco_fila,self.muneco_columna-1]=0
@@ -190,7 +191,7 @@ class Sokoban:
       self.mapa[self.muneco_fila,self.muneco_columna]=4
       self.mapa[self.muneco_fila,self.muneco_columna-2]=6
       self.muneco_columna-=1
-
+#Aqui acabamos los movimientos hacia la Izquierda y funcionando ala correccion
     # Mover Arriba
   def moverArriba(self): 
      #29.- Espacio / Personaje 
