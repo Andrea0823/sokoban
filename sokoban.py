@@ -192,7 +192,7 @@ class Sokoban:
       self.mapa[self.muneco_fila,self.muneco_columna-2]=6
       self.muneco_columna-=1
 #Aqui acabamos los movimientos hacia la Izquierda y funcionando ala correccion
-    # Mover Arriba
+    #Comensamos con los movimientos hacia arriba
   def moverArriba(self): 
      #29.- Espacio / Personaje 
     if self.mapa[self.muneco_fila,self.muneco_columna]== 0 and  self.mapa[self.muneco_fila-1,self.muneco_columna]==1:
@@ -262,7 +262,8 @@ class Sokoban:
       self.mapa[self.muneco_fila-1,self.muneco_columna]=5
       self.mapa[self.muneco_fila-2,self.muneco_columna]=6
       self.muneco_fila-=1
-    # Metodo moverAbajo
+    #Aqui termina los movimientos de arriba comprobados cada uno
+    #Comiezan los movimientos de abajo
   def moverAbajo(self): 
     #41.- Espacio / Personaje 
     if self.mapa[self.muneco_fila,self.muneco_columna]== 0 and  self.mapa[self.muneco_fila+1,self.muneco_columna]==1:
@@ -332,6 +333,8 @@ class Sokoban:
       self.mapa[self.muneco_fila+1,self.muneco_columna]=5
       self.mapa[self.muneco_fila+2,self.muneco_columna]=6
       self.muneco_fila+=1
+    #Aqui terminan los movimientos de abajo comprobados cada uno 
+
 juego = Sokoban()#Crea un objeto para jugar
 juego.imprimirMapa()#Imprime el mapa
 
