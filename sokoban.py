@@ -12,11 +12,16 @@ class Sokoban:
   #mapa = [3,1,1,1,0,1,1,1,3]#Define el mapa de juego
 
   mapa = [
-	[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3],
-	[3,4,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,3],
-	[3,1,1,1,0,1,1,1,2,1,1,1,1,1,1,1,1,1,3],
-	[3,4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,3],
-	[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]
+	[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3],
+	[3,1,1,1,1,1,1,1,4,1,1,1,1,1,1,4,1,3],
+	[3,1,1,1,2,1,1,1,1,1,1,1,1,2,1,1,1,3],
+	[3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3],
+  [3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3], 
+  [3,1,1,4,1,1,1,1,1,1,1,1,0,1,1,1,1,3],
+  [3,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,3],
+  [3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,3],
+  [3,1,1,1,1,1,1,1,4,1,1,1,1,1,1,1,1,3],  
+	[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]
       ]#Define el mapa de juego
   mapa = np.array(mapa)
   result = np.where(mapa == 0)
@@ -25,22 +30,19 @@ class Sokoban:
   def __init__(self):
     pass
   def imprimirMapa(self): #Metodo para imprimir el mapa
-      for j in range(5):#Recorre cada caracterer del juego
-        for i in range(19):
-          if self.mapa[j][i] == 1:#Si encuentra un numero 1 -  espacio
-            #for a in range(len(self.mapa[0])):
-            print(" ", end = "")#Cambiar un 1 por un ""
-          elif self.mapa[j][i] == 0: #3-pared
-            #for a in range(len(self.mapa)):
-            print("|", end = "")#Cambia un 3 por un simbolo
-          elif self.mapa[j][i] == 3: #3-pared
-              print("#", end = "")#Cambia un 3 por un simbolo
-          elif self.mapa[j][i] == 2: #3-pared
-              print("🎁", end = "")#Cambia un 3 por un simbolo
-          else:
-            print(self.mapa[j][i], end="")
-        print()
-      print() #Imprime una linea vacia
+    for j in range(10):#Recorre cada caracterer del juego
+      for i in range(18):
+        if self.mapa[j][i] == 0:
+          print("🐶", end = "")
+        elif self.mapa[j][i] == 1:
+          print("  ", end = "")
+        elif self.mapa[j][i] == 2:
+          print("🎁", end = "")
+
+        else:
+          print(self.mapa[j][i], end=" ")
+      print()
+    print() #Imprime una linea vacia
   def moverDerecha(self):
     #5.-Personaje, espacio 
     if self.mapa[self.muneco_fila,self.muneco_columna]== 0 and  self.mapa[self.muneco_fila,self.muneco_columna+1]==1:
